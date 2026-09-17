@@ -1,0 +1,9 @@
+{"id": "hostile-000", "intent": "status_service_added", "action": "pull-up-account", "confidence": 0.8904, "needs_human": false, "cost_usd": 0.0, "latency_ms": 43.371}
+{"id": "hostile-001", "intent": "mistimed_billing_never_bought", "action": "pull-up-account", "confidence": 0.8276, "needs_human": false, "cost_usd": 0.0, "latency_ms": 41.301}
+{"id": "hostile-002", "intent": "promo_code_out_of_date", "action": "pull-up-account", "confidence": 0.8333, "needs_human": false, "cost_usd": 0.0, "latency_ms": 40.952}
+{"id": "hostile-003", "intent": "refund_update", "action": "pull-up-account", "confidence": 0.8904, "needs_human": false, "cost_usd": 0.0, "latency_ms": 37.041}
+{"id": "hostile-004", "intent": "manage_create", "action": "pull-up-account", "confidence": 0.7826, "needs_human": false, "cost_usd": 0.0, "latency_ms": 38.156}
+{"id": "hostile-005", "intent": "status_delivery_time", "action": "pull-up-account", "confidence": 0.8276, "needs_human": false, "cost_usd": 0.0, "latency_ms": 35.758}
+{"id": "hostile-006", "intent": "unknown", "action": "none", "confidence": 0.0, "needs_human": true, "cost_usd": 0.0, "latency_ms": 0.139}
+{"id": "hostile-007", "intent": "manage_create", "action": "pull-up-account", "confidence": 0.8276, "needs_human": false, "cost_usd": 0.0, "latency_ms": 49.567}
+{"id": "hostile-008", "intent": "unknown", "action": "none", "confidence": 0.0, "needs_human": true, "cost_usd": 0.0, "latency_ms": 0.007}

@@ -1,0 +1,40 @@
+{
+  "winner": {
+    "backbone": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "short_name": "paraphrase-multilingual-MiniLM-L12-v2",
+    "model_path": "artifacts/models/intent",
+    "train_rows": 20000,
+    "train_elapsed_s": 918.7,
+    "clean": {
+      "accuracy": 0.6980,
+      "macro_f1": 0.7053,
+      "mean_max_prob": 0.8124
+    },
+    "noisy": {
+      "accuracy": 0.6233,
+      "macro_f1": 0.5103,
+      "mean_max_prob": 0.7419
+    },
+    "gap": 0.0747
+  },
+  "all_runs": [
+    {
+      "backbone": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "short_name": "paraphrase-multilingual-MiniLM-L12-v2",
+      "model_path": "artifacts/models/paraphrase-multilingual-MiniLM-L12-v2",
+      "train_rows": 20000,
+      "train_elapsed_s": 918.7,
+      "clean": {
+        "accuracy": 0.6980,
+        "macro_f1": 0.7053,
+        "mean_max_prob": 0.8124
+      },
+      "noisy": {
+        "accuracy": 0.6233,
+        "macro_f1": 0.5103,
+        "mean_max_prob": 0.7419
+      },
+      "gap": 0.0747
+    }
+  ]
+}

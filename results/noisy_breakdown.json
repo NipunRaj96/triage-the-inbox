@@ -1,0 +1,212 @@
+{
+  "code_mixed": {
+    "n": 50,
+    "intent_accuracy": 0.64,
+    "action_accuracy": 0.7,
+    "avg_last_turn_tokens": 9.06,
+    "last_turn_empty_count": 0,
+    "last_turn_placeholder_count": 0,
+    "top5_wrong_intents": [
+      {
+        "gold": "refund_update",
+        "pred": "refund_status",
+        "count": 2
+      },
+      {
+        "gold": "pricing_3",
+        "pred": "status_shipping_question",
+        "count": 1
+      },
+      {
+        "gold": "manage_create",
+        "pred": "manage_cancel",
+        "count": 1
+      },
+      {
+        "gold": "status_quantity",
+        "pred": "status",
+        "count": 1
+      },
+      {
+        "gold": "status_quantity",
+        "pred": "status_mystery_fee",
+        "count": 1
+      }
+    ]
+  },
+  "empty": {
+    "n": 50,
+    "intent_accuracy": 0.58,
+    "action_accuracy": 0.48,
+    "avg_last_turn_tokens": 0.0,
+    "last_turn_empty_count": 50,
+    "last_turn_placeholder_count": 0,
+    "top5_wrong_intents": [
+      {
+        "gold": "status_payment_method",
+        "pred": "status",
+        "count": 1
+      },
+      {
+        "gold": "shirt_how_4",
+        "pred": "shirt_other_4",
+        "count": 1
+      },
+      {
+        "gold": "status_shipping_question",
+        "pred": "shirt_other_4",
+        "count": 1
+      },
+      {
+        "gold": "status_due_amount",
+        "pred": "status_due_date",
+        "count": 1
+      },
+      {
+        "gold": "manage_upgrade",
+        "pred": "status_payment_method",
+        "count": 1
+      }
+    ]
+  },
+  "screenshot": {
+    "n": 50,
+    "intent_accuracy": 0.52,
+    "action_accuracy": 0.58,
+    "avg_last_turn_tokens": 26.0,
+    "last_turn_empty_count": 0,
+    "last_turn_placeholder_count": 0,
+    "top5_wrong_intents": [
+      {
+        "gold": "status_service_added",
+        "pred": "status_service_removed",
+        "count": 1
+      },
+      {
+        "gold": "shirt_how_3",
+        "pred": "shirt_other_3",
+        "count": 1
+      },
+      {
+        "gold": "slow_speed",
+        "pred": "search_results",
+        "count": 1
+      },
+      {
+        "gold": "bad_price_yesterday",
+        "pred": "out_of_stock_one_item",
+        "count": 1
+      },
+      {
+        "gold": "status_due_amount",
+        "pred": "status_quantity",
+        "count": 1
+      }
+    ]
+  },
+  "two_intents": {
+    "n": 50,
+    "intent_accuracy": 0.64,
+    "action_accuracy": 0.7,
+    "avg_last_turn_tokens": 16.78,
+    "last_turn_empty_count": 0,
+    "last_turn_placeholder_count": 0,
+    "top5_wrong_intents": [
+      {
+        "gold": "manage_create",
+        "pred": "manage_upgrade",
+        "count": 1
+      },
+      {
+        "gold": "out_of_stock_general",
+        "pred": "status_service_removed",
+        "count": 1
+      },
+      {
+        "gold": "status_due_date",
+        "pred": "status_due_amount",
+        "count": 1
+      },
+      {
+        "gold": "timing_3",
+        "pred": "status_due_amount",
+        "count": 1
+      },
+      {
+        "gold": "return_size",
+        "pred": "return_color",
+        "count": 1
+      }
+    ]
+  },
+  "typo": {
+    "n": 50,
+    "intent_accuracy": 0.66,
+    "action_accuracy": 0.58,
+    "avg_last_turn_tokens": 5.54,
+    "last_turn_empty_count": 0,
+    "last_turn_placeholder_count": 0,
+    "top5_wrong_intents": [
+      {
+        "gold": "status_due_date",
+        "pred": "status_due_amount",
+        "count": 2
+      },
+      {
+        "gold": "recover_password",
+        "pred": "recover_username",
+        "count": 1
+      },
+      {
+        "gold": "status_payment_method",
+        "pred": "status",
+        "count": 1
+      },
+      {
+        "gold": "status_due_amount",
+        "pred": "status_due_date",
+        "count": 1
+      },
+      {
+        "gold": "promo_code_invalid",
+        "pred": "promo_code_out_of_date",
+        "count": 1
+      }
+    ]
+  },
+  "very_long": {
+    "n": 50,
+    "intent_accuracy": 0.7,
+    "action_accuracy": 0.6,
+    "avg_last_turn_tokens": 1144.56,
+    "last_turn_empty_count": 0,
+    "last_turn_placeholder_count": 0,
+    "top5_wrong_intents": [
+      {
+        "gold": "manage_cancel",
+        "pred": "cost",
+        "count": 1
+      },
+      {
+        "gold": "return_stain",
+        "pred": "search_results",
+        "count": 1
+      },
+      {
+        "gold": "return_stain",
+        "pred": "return_size",
+        "count": 1
+      },
+      {
+        "gold": "promo_code_out_of_date",
+        "pred": "promo_code_invalid",
+        "count": 1
+      },
+      {
+        "gold": "recover_password",
+        "pred": "manage_change_phone",
+        "count": 1
+      }
+    ]
+  }
+}

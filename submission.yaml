@@ -1,0 +1,131 @@
+submission_version: "1.0"
+problem: "OP-06"
+handle: NipunRaj96
+repo: https://github.com/NipunRaj96/triage-the-inbox
+repo_visibility: private
+leaderboard: false
+season: 1
+pins_ack: true
+models_ack: true
+claimed:
+  intent_accuracy: 0.6913
+  macro_f1: 0.6933
+  action_accuracy: 0.7461
+  noisy_accuracy: 0.6867
+  schema_valid_pct: 100.0
+  top70_error_ratio: 0.5711
+  cost_per_message_usd: 0.0
+  latency_p95_s: 0.1333
+spend:
+  results_usd: 0.00
+  compute_usd: 0
+hardware: "MacBook Air M1 (ARM64), CPU only; no GPU"
+title: "Triage the Inbox"
+author: "Nipun Kumar"
+date: "2026-09-14"
+
+# ── Model architecture ─────────────────────────────────────────────────────
+approach:
+  intent_classifier:
+    type: "SetFit (sentence-transformers fine-tuned)"
+    backbone: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    parameters: "118M"
+    training_data: "train.jsonl.gz (20,000 rows)"
+    inference: "CPU-only, no API, no GPU"
+  action_classifier:
+    type: "LightGBM multiclass (30 action labels)"
+    features: 552  # intent_probs (96) + history (30) + permitted (30) + embedding (384) + state (12)
+    training_data: "train.jsonl.gz (20,000 rows)"
+    policy_boost: 1.0
+    inference: "CPU-only, < 1ms per prediction"
+  calibrator:
+    type: "Isotonic regression"
+    trained_on: "held-out dev slice (400 rows)"
+  cost_usd_per_1000: 0.00  # zero API calls, no GPU billing
+
+# ── Evaluation results (dev.jsonl + dev_noisy.jsonl + hostile.jsonl) ───────
+evaluation:
+  grader_version: "2.1"
+  eval_date: "2026-09-13"
+  counts:
+    clean: 2000
+    noisy: 300
+    hostile: 9
+    total: 2309
+    missing_predictions: 0
+
+  bars:
+    intent_accuracy_all:
+      value: 0.6913
+      bar: 0.55
+      pass: true
+    action_accuracy_all:
+      value: 0.7461
+      bar: 0.55
+      pass: true
+    macro_f1_all:
+      value: 0.6933
+      bar: 0.50
+      pass: true
+    schema_valid_pct:
+      value: 100.0
+      bar: 100.0
+      pass: true
+    noisy_gap:
+      value: 0.0683
+      bar: 0.10
+      pass: true
+    top70_error_ratio:
+      value: 0.5711
+      bar: 0.85
+      pass: true
+
+  detailed:
+    intent_accuracy_clean: 0.6975
+    intent_accuracy_noisy: 0.6500
+    action_accuracy_clean: 0.7550
+    action_accuracy_noisy: 0.6867
+    matched_clean_accuracy: 0.7333
+    matched_noisy_gap: 0.0466
+    policy_violation_rate: 0.0935
+    gold_policy_violation_rate: 0.0883
+    top70_accuracy: 0.8550
+    distinct_confidences: 132
+
+  latency:
+    concurrency: 4
+    uvicorn_workers: 1
+    cpu_cores: 8
+    sample_count: 1000
+    throughput_rps: 33.0
+    mean_ms: 121.2
+    p50_ms: 121.0
+    p95_ms: 133.3
+    p99_ms: 140.2
+    single_request_p95_ms: 55.8
+    hardware: "MacBook Air M1 (ARM64), 8 CPU cores, CPU only"
+
+  baseline_comparison:
+    intent_accuracy: {baseline: 0.3748, ours: 0.6913, delta: +0.3165}
+    action_accuracy: {baseline: 0.3913, ours: 0.7461, delta: +0.3548}
+    macro_f1: {baseline: 0.4508, ours: 0.6933, delta: +0.2425}
+    noisy_gap: {baseline: 0.0743, ours: 0.0683, delta: -0.0060, note: "all 6 qualification bars PASS"}
+    top70_error_ratio: {baseline: 1.000, ours: 0.5711, delta: -0.4289}
+
+# ── Service contract ───────────────────────────────────────────────────────
+service:
+  entrypoint: "scripts/reproduce.sh"
+  healthz: "GET /healthz → {status: ok}"
+  triage: "POST /triage"
+  metrics: "GET /metrics (Prometheus)"
+  schema_in: "data/input.schema.json"
+  schema_out: "data/schema.json"
+
+# ── Key design decisions ───────────────────────────────────────────────────
+decisions:
+  - "No LLM in hot path: zero $0 per-inference API cost"
+  - "SetFit avoids full fine-tune: 5-shot contrastive training on MiniLM"
+  - "Policy boost = 1.0 (not hard mask): preserves recall on 9% off-policy gold labels"
+  - "Isotonic calibration on held-out slice: confidence is genuinely useful (top70 accuracy +11pp)"
+  - "Noisy fallback: last non-empty customer turn + full-context embedding for empty-final-turn rows"
+  - "Noise augmentation was tried and abandoned: degraded both clean and noisy accuracy simultaneously"

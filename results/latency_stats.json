@@ -1,0 +1,10 @@
+{
+  "n": 2309,
+  "mean_ms": 40.783,
+  "p50_ms": 40.63,
+  "p95_ms": 52.046,
+  "p99_ms": 58.961,
+  "max_ms": 435.579,
+  "total_elapsed_s": 94.24,
+  "throughput_rows_per_s": 24.5
+}

@@ -1,0 +1,23 @@
+{
+  "dataset": "data/dev.jsonl",
+  "total_rows": 2000,
+  "fit_rows": 400,
+  "eval_rows": 1600,
+  "fit_accuracy": 0.735,
+  "raw_evaluation": {
+    "overall_accuracy": 0.7619,
+    "top70_accuracy": 0.8911,
+    "top70_error_ratio": 0.4574,
+    "threshold": 0.94217
+  },
+  "calibrated_evaluation": {
+    "overall_accuracy": 0.7619,
+    "top70_accuracy": 0.8832,
+    "top70_error_ratio": 0.4906,
+    "threshold": 0.625,
+    "distinct_confidences": 85
+  },
+  "bar_top70_error_ratio": 0.85,
+  "passed": true,
+  "saved_to": "artifacts/models/calibration/calibrator.pkl"
+}

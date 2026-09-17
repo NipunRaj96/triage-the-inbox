@@ -1,0 +1,37 @@
+# Virtual environment
+.venv/
+venv/
+ENV/
+
+# Environment configuration (secrets / local overrides)
+.env
+!.env.example
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Testing, Coverage & Linters
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local OS files
+.DS_Store
+Thumbs.db
+
+# Upstream reference and staging directories
+Deployment.inc-Hiring-Problems-main/
+
+# Model training checkpoints & temporary scratch
+checkpoints/
+artifacts/models/intent/checkpoint-*/
+artifacts/models/intent/runs/
+artifacts/models/intent/contrastive/
+
+# Internal documentation
+INFO.md
+

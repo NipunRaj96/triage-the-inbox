@@ -1,0 +1,11 @@
+# Manager policy overrides for OP-06 Triage
+# Chosen by Phase 3 POLICY_BOOST sweep: clean acc 0.7425, violation 0.0565
+policy_boost: 1.0
+human_threshold: 0.62
+policy_deviation_threshold: 0.80
+always_escalate_actions:
+  - "escalate"
+  - "manager-review"
+sanitize:
+  max_tokens: 2000
+overrides: {}

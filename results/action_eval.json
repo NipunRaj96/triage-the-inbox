@@ -1,0 +1,49 @@
+{
+  "chosen_policy_boost": 0.5,
+  "train_elapsed_s": 314.7,
+  "feature_dim": 552,
+  "boost_table": [
+    {
+      "boost": 0.0,
+      "clean_acc": 0.7585,
+      "noisy_acc": 0.62,
+      "violation_rate": 0.074,
+      "gap": 0.1385
+    },
+    {
+      "boost": 0.25,
+      "clean_acc": 0.759,
+      "noisy_acc": 0.62,
+      "violation_rate": 0.0715,
+      "gap": 0.139
+    },
+    {
+      "boost": 0.5,
+      "clean_acc": 0.7615,
+      "noisy_acc": 0.62,
+      "violation_rate": 0.0685,
+      "gap": 0.1415
+    },
+    {
+      "boost": 0.75,
+      "clean_acc": 0.761,
+      "noisy_acc": 0.62,
+      "violation_rate": 0.0655,
+      "gap": 0.141
+    },
+    {
+      "boost": 1.0,
+      "clean_acc": 0.7615,
+      "noisy_acc": 0.62,
+      "violation_rate": 0.0635,
+      "gap": 0.1415
+    },
+    {
+      "boost": 1.5,
+      "clean_acc": 0.761,
+      "noisy_acc": 0.62,
+      "violation_rate": 0.0615,
+      "gap": 0.141
+    }
+  ]
+}

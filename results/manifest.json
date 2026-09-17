@@ -1,0 +1,21 @@
+{
+  "claimed": {
+    "intent_accuracy": 0.6913,
+    "macro_f1": 0.6933,
+    "action_accuracy": 0.7461,
+    "noisy_accuracy": 0.6867,
+    "schema_valid_pct": 100.0,
+    "top70_error_ratio": 0.5711,
+    "cost_per_message_usd": 0.0,
+    "latency_p95_s": 0.1333
+  },
+  "runs": [
+    {
+      "run_id": "op06-prod-final",
+      "seed": 42,
+      "model": "SetFit(MiniLM-L12-v2)+LightGBM",
+      "status": "completed",
+      "raw_path": "results/raw/dev-final.jsonl"
+    }
+  ]
+}
