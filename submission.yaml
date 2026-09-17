@@ -2,6 +2,7 @@ submission_version: "1.0"
 problem: "OP-06"
 handle: NipunRaj96
 repo: https://github.com/NipunRaj96/triage-the-inbox
+commit: a254bca7f1de43aed0e1b1b9c790d4cc3d77fcf0
 repo_visibility: private
 leaderboard: false
 season: 1
